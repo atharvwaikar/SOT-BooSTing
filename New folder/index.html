@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea of Thieves Boosting Services</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: white;
+        }
+
+        header {
+            background: url('https://example.com/sea-of-thieves-header-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+        }
+
+        .header-box {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px 40px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px 5px rgba(255, 215, 0, 0.8);
+        }
+
+        h1 {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 1), 0 0 20px rgba(255, 215, 0, 0.7);
+        }
+
+        p {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 1), 0 0 20px rgba(255, 215, 0, 0.7);
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 20px;
+            gap: 10px;
+        }
+
+        .service-card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 10px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 20px 4px rgba(255, 215, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            color: #FFD700;
+            position: relative;
+            min-height: 230px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 25px 5px rgba(255, 215, 0, 0.8), inset 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6), 0 0 30px 5px rgba(255, 215, 0, 1);
+        }
+
+        .service-card h3 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .service-card p {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .dropdown {
+            display: none;
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .boost-button {
+            background: #FFD700;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            color: #FFD700;
+        }
+
+        .payment-methods {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #1d1d1d;
+        }
+
+        .payment-methods img {
+            width: 100px;
+            margin: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .service-card {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function showBoostingSection(sectionId) {
+            const sections = document.querySelectorAll('.dropdown');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const targetSection = document.getElementById(sectionId);
+            targetSection.style.display = 'block';
+        }
+
+        function updatePrice() {
+            const prices = {
+                'half': 'Rs-1500 ($18 USD) for 50 Level Servant/Guardian Boosting',
+                'full': 'Rs-2500 ($30 USD) for 105 Level Servant/Guardian Boosting',
+                'gold': 'Rs-500 ($6 USD) for Gold Hoarders (50 Level)',
+                'merchant': 'Rs-500 ($6 USD) for Merchant Alliance (50 Level)',
+                'souls': 'Rs-500 ($6 USD) for Order of Souls (50 Level)',
+                'athena': 'Rs-500 ($6 USD) for Athenas Fortune (50 Level)',
+                'reaper': 'Rs-500 ($6 USD) for Reapers Bones (50 Level)'
+            };
+            const selected = document.getElementById('boost-type').value;
+            document.getElementById('price').innerText = prices[selected];
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="header-box">
+        <h1>Sea of Thieves Boosting Services</h1>
+        <p>Boost your Sea of Thieves progress at unbeatable prices!</p>
+    </div>
+</header>
+
+<div class="services">
+    <!-- Half Boosting (Left) -->
+    <div class="service-card" style="background-image: url('https://example.com/half-boosting-bg.jpg')" onclick="showBoostingSection('half-boosting')">
+        <h3>Half Boosting (50 Level)</h3>
+        <p>Click here to view options</p>
+    </div>
+
+    <!-- Full Boosting (Center) -->
+    <div class="service-card" style="background-image: url('https://example.com/full-boosting-bg.jpg')" onclick="showBoostingSection('full-boosting')">
+        <h3>Full Boosting (105 Level)</h3>
+        <p>Click here to view options</p>
+    </div>
+
+    <!-- Other Reputation Boosting (Right) -->
+    <div class="service-card" style="background-image: url('https://example.com/other-boosting-bg.jpg')" onclick="showBoostingSection('other-reputation')">
+        <h3>Other Reputation Boosting</h3>
+        <p>Click here to view options</p>
+    </div>
+</div>
+
+<!-- Half Boosting Section -->
+<div id="half-boosting" class="dropdown">
+    <h3>Choose Half Boosting Product</h3>
+    <select id="boost-type" onchange="updatePrice()">
+        <option value="half">Servant/Guardian (50 Level) - Rs-1500 ($18 USD)</option>
+    </select>
+    <p class="pricing" id="price">Rs-1500 ($18 USD)</p>
+    <a href="https://discord.gg/tTRVCpT2Jg" class="boost-button">Order Now</a>
+
+</div>
+
+<!-- Full Boosting Section -->
+<div id="full-boosting" class="dropdown">
+    <h3>Choose Full Boosting Product</h3>
+    <select id="boost-type" onchange="updatePrice()">
+        <option value="full">Servant/Guardian (105 Level) - Rs-2500 ($30 USD)</option>
+    </select>
+    <p class="pricing" id="price">Rs-2500 ($30 USD)</p>
+    <a href="https://discord.gg/tTRVCpT2Jg" class="boost-button">Order Now</a>
+</div>
+
+<!-- Other Reputation Boosting Section -->
+<div id="other-reputation" class="dropdown">
+    <h3>Choose Reputation Boosting Product</h3>
+    <select id="boost-type" onchange="updatePrice()">
+        <option value="gold">Gold Hoarders (50 Level) - Rs-500</option>
+        <option value="merchant">Merchant Alliance - Rs-500</option>
+        <option value="souls">Order of Souls - Rs-500</option>
+        <option value="athena">Athenas Fortune - Rs-500</option>
+        <option value="reaper">Reapers Bones - Rs-500</option>
+    </select>
+    <p class="pricing" id="price">Rs-500 ($6 USD)</p>
+   <a href="https://discord.gg/tTRVCpT2Jg" class="boost-button">Order Now</a>
+</div>
+
+<!-- Payment Methods Section -->
+<div class="payment-methods">
+    <h3>Payment Methods</h3>
+    <img src="https://example.com/upi-logo.png" alt="UPI Payment">
+    <img src="https://example.com/paypal-logo.png" alt="PayPal Payment">
+</div>
+
+<footer>
+    <p>&copy; 2025 Sea of Thieves Boosting. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
